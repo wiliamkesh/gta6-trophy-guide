@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Vice Bureau — Forensic Platinum Casefile · GTA VI Trophy Guide</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-top">
+    <div>
+      <p class="kicker">Casefile LVB-55 · Grand Theft Auto VI · PlayStation 5</p>
+      <h1>LEONIDA VICE BUREAU</h1>
+      <p class="subtitle">Forensic Platinum Casefile — an unofficial fan guide &amp; tracker. No Rockstar logo, artwork or text is used. Trophy names, descriptions and grades are PlayStation's official list; every guide is our own wording and cites its sources.</p>
+    </div>
+    <div class="masthead-side" aria-label="Progress">
+      <p class="big-progress"><span id="earnedCount">0</span><span class="of">/55 earned</span></p>
+      <p class="grade-counts" id="gradeCounts">P 0/1 · G 0/2 · S 0/6 · B 0/46</p>
+      <div class="progress-bar" role="progressbar" aria-label="Trophies earned" aria-valuemin="0" aria-valuemax="55" aria-valuenow="0" id="progressBar"><span id="progressFill"></span></div>
+      <p class="saved-note" id="savedNote">Saved in this browser</p>
+    </div>
+  </div>
+  <div class="masthead-actions">
+    <button id="spoilerToggle" type="button" aria-pressed="true">Spoiler Shield: ON — 28 hidden trophies masked</button>
+    <button id="exportBtn" type="button">Export progress</button>
+    <button id="importBtn" type="button">Import progress</button>
+    <span class="offline-note">Works offline · nothing leaves this browser</span>
+  </div>
+  <div class="io-panel" id="ioPanel" hidden>
+    <label for="ioText">Progress JSON — copy it out, or paste one back in:</label>
+    <textarea id="ioText" rows="6" spellcheck="false"></textarea>
+    <div class="io-buttons">
+      <button id="downloadBtn" type="button">Download .json</button>
+      <button id="copyBtn" type="button">Copy</button>
+      <button id="applyImportBtn" type="button">Apply pasted JSON</button>
+      <label class="file-btn">Choose file <input id="importFile" type="file" accept="application/json,.json"></label>
+      <button id="resetBtn" type="button">Reset all progress</button>
+      <button id="closeIoBtn" type="button">Close</button>
+    </div>
+    <p class="io-status" id="ioStatus" role="status"></p>
+  </div>
+</header>
+
+<section class="audit" aria-label="Audit">
+  <h2>Case audit — counted from the data, not claimed</h2>
+  <dl id="auditList"></dl>
+  <p class="audit-note">Every step in every guide carries a numbered source. A claim we could not verify in a source we read is marked <strong>unconfirmed</strong> in the open, never dressed up as fact.</p>
+</section>
+
+<nav class="tabs" aria-label="Sections">
+  <button type="button" data-tab="tracker" class="active" aria-current="page">Tracker</button>
+  <button type="button" data-tab="roadmap">Roadmap</button>
+  <button type="button" data-tab="missables">Missables</button>
+  <button type="button" data-tab="sources">Sources</button>
+</nav>
+
+<main>
+  <section id="tab-tracker" class="tab-panel">
+    <div class="tracker-controls">
+      <div class="chips" id="chips" role="group" aria-label="Filter by kind"></div>
+      <div class="tracker-search">
+        <label for="search">Search trophies</label>
+        <input id="search" type="search" placeholder="Name or description…" autocomplete="off">
+        <label for="gradeFilter">Grade</label>
+        <select id="gradeFilter">
+          <option value="all">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </div>
+    </div>
+    <p class="next-up" id="nextUp"></p>
+    <div class="tracker-grid">
+      <div>
+        <p class="list-count" id="listCount"></p>
+        <ul class="trophy-list" id="trophyList"></ul>
+      </div>
+      <article class="detail" id="detail" aria-live="polite"></article>
+    </div>
+  </section>
+
+  <section id="tab-roadmap" class="tab-panel" hidden>
+    <h2>Roadmap to the platinum</h2>
+    <p class="roadmap-lede" id="roadmapLede"></p>
+    <div class="stat-cards" id="statCards"></div>
+    <div class="stages" id="stages"></div>
+    <p class="footnote">Stage hours are the sources' own figures: story 60–80 h, 100% checklist about 100 h, cleanup about 10 h (PowerPyx). The 91-story-mission and 15+ save-slot figures come from the competition tracking brief, checked live 20 Nov 2026.</p>
+  </section>
+
+  <section id="tab-missables" class="tab-panel" hidden>
+    <h2>Missables &amp; points of no return</h2>
+    <p class="missable-lede">Only <strong>one</strong> trophy is reported as possibly missable. Five more have story-linked windows and are flagged <strong>watch</strong>. Everything else can be finished after the credits. There is no mission replay — <strong>save first</strong>.</p>
+    <div class="scrubber-wrap">
+      <table class="scrubber" id="scrubber">
+        <caption>Point-of-no-return Chapter Scrubber — Trophy × Chapter. “LAST” marks the last chapter it can still be done in.</caption>
+      </table>
+    </div>
+    <div class="gates" id="gates"></div>
+  </section>
+
+  <section id="tab-sources" class="tab-panel" hidden>
+    <h2>Sources &amp; audit</h2>
+    <p class="sources-lede">Each source below is a page we actually read on the date shown. A guide step cites its sources by number; a step with no number would be an invention, and there are none.</p>
+    <ol class="source-list" id="sourceList"></ol>
+    <h3>Disputes — both versions shown</h3>
+    <ul class="dispute-list" id="disputeList"></ul>
+    <h3>How the 28 hidden trophies were counted</h3>
+    <p class="footnote" id="hiddenRule"></p>
+    <h3>Trophy × Source heatmap</h3>
+    <p class="footnote">Each row is one trophy's guide; each filled cell is a source cited by that guide. Darker rows are backed by more sources.</p>
+    <div class="heatmap-wrap"><table class="heatmap" id="heatmap"></table></div>
+  </section>
+</main>
+
+<footer>
+  <p>Unofficial fan guide. Not affiliated with Rockstar Games, Take-Two Interactive or Sony Interactive Entertainment. No Rockstar logo, artwork or game text is used. Trophy names, descriptions and grades are PlayStation's official list. Sources read 21 Nov 2026. All progress is stored only in this browser (localStorage key <code>leonida-vice-bureau.progress.v1</code>).</p>
+</footer>
+<script type="module" src="app.js"></script>
+</body>
+</html>
