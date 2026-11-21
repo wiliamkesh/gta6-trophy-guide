@@ -1,8 +1,8 @@
 # Leonida Vice Bureau — Forensic Platinum Casefile
 
-[![make.fun](https://img.shields.io/badge/make.fun-bounty-blue)](https://make.fun/competitions/gta6-trophy-guide-01)
-[![GTA VI](https://img.shields.io/badge/GTA%20VI-trophy%20guide-amber)](https://make.fun/competitions/gta6-trophy-guide-01)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![make.fun](https://make.fun/badge/gta6-trophy-guide-01.svg)](https://make.fun/bounty/gta6-trophy-guide-01)
+[![rank](https://make.fun/badge/gta6-trophy-guide-01/wiliamkesh/gta6-trophy-guide/rank.svg)](https://make.fun/bounty/gta6-trophy-guide-01)
+[![reward](https://make.fun/badge/gta6-trophy-guide-01/wiliamkesh/gta6-trophy-guide/reward.svg)](https://make.fun/bounty/gta6-trophy-guide-01)
 
 An offline, open-source trophy guide and tracker for **Grand Theft Auto VI** (PlayStation 5) — built for the [make.fun gta6-trophy-guide-01 bounty](https://make.fun/competitions/gta6-trophy-guide-01).
 
