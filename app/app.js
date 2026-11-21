@@ -64,15 +64,15 @@ function renderAudit() {
     ['Possibly missable', '1'],
     ['Watch (story windows)', '5'],
     ['Unconfirmed', '5'],
-    ['Disputes shown both ways', '5'],
+    ['Disputes shown both ways', '4'],
   ];
   $('auditList').innerHTML = items.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('');
 }
 
 const CHIPS = [
-  ['all', 'All 55'], ['story', 'Story'], ['missable', 'Missable'], ['collectibles', 'Collectibles'],
+  ['all', 'All'], ['story', 'Story'], ['missable', 'Missable'], ['collectibles', 'Collectibles'],
   ['activities', 'Activities'], ['side', 'Side'], ['crime', 'Crime'], ['world', 'World'],
-  ['online', 'Online 0'], ['hidden', 'PSN-hidden 28'], ['disputed', 'Disputed'], ['unconfirmed', 'Unconfirmed'],
+  ['online', 'Online'], ['hidden', 'PSN-hidden'], ['disputed', 'Disputed'], ['unconfirmed', 'Unconfirmed'],
   ['notearned', 'Not earned'],
 ];
 function chipCount(name) {
